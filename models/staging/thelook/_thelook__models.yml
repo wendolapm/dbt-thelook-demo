@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_thelook__users
+    description: Cleaned user records from the TheLook ecommerce dataset.
+
+  - name: stg_thelook__orders
+    description: Cleaned order-level records with renamed timestamps and status fields.
+
+  - name: stg_thelook__order_items
+    description: Cleaned order item records at the line-item grain.
+
+  - name: stg_thelook__products
+    description: Cleaned product dimension source data.

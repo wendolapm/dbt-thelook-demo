@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: User dimension built from staged user data.
+
+  - name: dim_products
+    description: Product dimension built from staged product data.
+
+  - name: fct_order_items
+    description: Fact table at the order-item grain, enriched with order, user, and product attributes.
