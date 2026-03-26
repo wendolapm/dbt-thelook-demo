@@ -66,3 +66,23 @@ models:
 
       - name: order_status
         description: Current order status from the orders table.
+
+  - name: fct_daily_revenue
+    description: Daily aggregated revenue and order metrics by traffic source.
+    columns:
+      - name: order_date
+        description: Date of the order.
+        data_tests:
+          - not_null
+
+      - name: traffic_source
+        description: Marketing traffic source for the user.
+
+      - name: total_orders
+        description: Number of distinct orders per day and traffic source.
+
+      - name: total_revenue
+        description: Total revenue from sale_price.
+
+      - name: avg_order_value
+        description: Average sale price per order item.
