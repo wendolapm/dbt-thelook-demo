@@ -3,12 +3,59 @@ version: 2
 models:
   - name: stg_thelook__users
     description: Cleaned user records from the TheLook ecommerce dataset.
+    columns:
+      - name: user_id
+        description: Primary key for users.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: email
+        description: User email address.
 
   - name: stg_thelook__orders
     description: Cleaned order-level records with renamed timestamps and status fields.
+    columns:
+      - name: order_id
+        description: Primary key for orders.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        description: Foreign key to users.
+        data_tests:
+          - not_null
 
   - name: stg_thelook__order_items
     description: Cleaned order item records at the line-item grain.
+    columns:
+      - name: order_item_id
+        description: Primary key for order items.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: order_id
+        description: Foreign key to orders.
+        data_tests:
+          - not_null
+
+      - name: user_id
+        description: Foreign key to users.
+        data_tests:
+          - not_null
+
+      - name: product_id
+        description: Foreign key to products.
+        data_tests:
+          - not_null
 
   - name: stg_thelook__products
     description: Cleaned product dimension source data.
+    columns:
+      - name: product_id
+        description: Primary key for products.
+        data_tests:
+          - not_null
+          - unique
